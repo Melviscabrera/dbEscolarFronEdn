@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+ </div>
+
+<div class="row">
+  <div class="col-md-6">
+    <form>
+      <fieldset class="form-group">
+        <label for="exampleInputEmail1">Codigo Materia</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="matCodigo" [(ngModel)]="unaMateria.matCodigo" placeholder="codigo">
+        <small class="text-muted">We'll never share your email with anyone else.</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleInputPassword1">Nombre Materia</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="matNombre" [(ngModel)]="unaMateria.matNombre" placeholder="nombre">
+      </fieldset>
+
+      <button type="button" class="btn btn-primary" (click)="guardarMateria()">Guardar</button>
+    </form>
+  </div>
+</div>
+
+
+
+ <hr>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>ID</th>
+        <th>Codigo</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+      </tr>
+      <tr *ngFor="let item of materias">
+        <td>{{item.matId}}</td>
+        <td>{{item.matCodigo}}</td>
+        <td>{{item.matNombre}}</td>
+        <td>{{item.matFechaCR}}</td>
+      </tr>
+    </table>
+  </div>
